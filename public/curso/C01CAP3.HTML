@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Introducción a la Automatización</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            padding: 48px 0 0; /* Height of navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 5rem;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style> 
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 1: Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 2: Fundamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 3: Herramientas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 4: Aplicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 5: Tendencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Módulo 3: Herramientas y Tecnologías de Automatización</h1>
+            </div>
+
+            <div class="content-section">
+                <h2>Robótica en la Automatización</h2>
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/800x200" class="card-img-top" alt="Robótica">
+                    <div class="card-body">
+                        <p class="card-text">La robótica es una de las tecnologías clave en la automatización moderna. Los robots se utilizan para realizar tareas repetitivas, peligrosas o precisas, mejorando la eficiencia y la seguridad en diversas industrias.</p>
+                        <h5>Tipos de robots industriales</h5>
+                        <ul>
+                            <li><strong>Robots articulados:</strong> Tienen brazos con múltiples articulaciones, lo que les permite una gran flexibilidad y alcance. Se usan comúnmente en la manufactura automotriz para soldadura y ensamblaje.</li>
+                            <li><strong>Robots SCARA:</strong> Son ideales para tareas de ensamblaje y manipulación de materiales. Ofrecen movimientos rápidos y precisos en un plano horizontal.</li>
+                            <li><strong>Robots cartesianos:</strong> Operan en tres ejes lineales y son utilizados en aplicaciones de pick-and-place y corte.</li>
+                            <li><strong>Robots cilíndricos:</strong> Tienen un brazo rotativo y una columna deslizante, lo que los hace adecuados para tareas de ensamblaje y manipulación de materiales.</li>
+                            <li><strong>Robots esféricos:</strong> Ofrecen movimientos rotativos y lineales, utilizados en soldadura y pintura.</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#roboticsModal">
+                            Más información
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Redes Industriales y Comunicaciones</h2>
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/800x200" class="card-img-top" alt="Redes Industriales">
+                    <div class="card-body">
+                        <p class="card-text">Las redes industriales son esenciales para la comunicación entre dispositivos en un entorno automatizado. Permiten la transferencia de datos en tiempo real, la coordinación de procesos y la supervisión remota.</p>
+                        <h5>Protocolos de comunicación industrial</h5>
+                        <ul>
+                            <li><strong>Modbus:</strong> Un protocolo de comunicación serial utilizado para conectar dispositivos electrónicos. Es simple y ampliamente adoptado en la industria.</li>
+                            <li><strong>Profibus:</strong> Un estándar de comunicación utilizado en la automatización de fábricas y procesos. Soporta comunicaciones en tiempo real y una alta cantidad de dispositivos.</li>
+                            <li><strong>Ethernet/IP:</strong> Un protocolo basado en Ethernet que permite la comunicación de datos en redes industriales. Ofrece alta velocidad y flexibilidad.</li>
+                            <li><strong>DeviceNet:</strong> Utilizado para la comunicación entre dispositivos de automatización como sensores y actuadores.</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#networksModal">
+                            Más información
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Software de Automatización</h2>
+                <div class="accordion" id="automationSoftwareAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSCADA">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSCADA" aria-expanded="true" aria-controls="collapseSCADA">
+                                SCADA (Supervisory Control and Data Acquisition)
+                            </button>
+                        </h2>
+                        <div id="collapseSCADA" class="accordion-collapse collapse show" aria-labelledby="headingSCADA" data-bs-parent="#automationSoftwareAccordion">
+                            <div class="accordion-body">
+                                <p>Los sistemas SCADA son esenciales para la supervisión y control de procesos industriales. Permiten a los operadores monitorizar el estado de los sistemas en tiempo real, recopilar datos y tomar decisiones informadas.</p>
+                                <p><strong>Características principales:</strong></p>
+                                <ul>
+                                    <li>Monitorización en tiempo real.</li>
+                                    <li>Alarmas y notificaciones.</li>
+                                    <li>Control remoto de equipos.</li>
+                                    <li>Historización de datos para análisis y reporting.</li>
+                                </ul>
+                                <p><strong>Aplicaciones:</strong> Los sistemas SCADA se utilizan en la gestión de infraestructuras críticas como plantas de tratamiento de agua, redes eléctricas y sistemas de transporte.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingHMI">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHMI" aria-expanded="false" aria-controls="collapseHMI">
+                                HMI (Human-Machine Interface)
+                            </button>
+                        </h2>
+                        <div id="collapseHMI" class="accordion-collapse collapse" aria-labelledby="headingHMI" data-bs-parent="#automationSoftwareAccordion">
+                            <div class="accordion-body">
+                                <p>Las interfaces hombre-máquina (HMI) permiten a los operadores interactuar con los sistemas automatizados de manera intuitiva. Proporcionan una interfaz gráfica para el control y monitorización de equipos.</p>
+                                <p><strong>Características principales:</strong></p>
+                                <ul>
+                                    <li>Pantallas táctiles y gráficas.</li>
+                                    <li>Visualización de datos y estados del sistema.</li>
+                                    <li>Control de equipos y procesos.</li>
+                                    <li>Alarmas y eventos en tiempo real.</li>
+                                </ul>
+                                <p><strong>Aplicaciones:</strong> Las HMIs se utilizan en fábricas, plantas de energía y cualquier entorno donde los operadores necesiten interactuar con sistemas automatizados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingMES">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMES" aria-expanded="false" aria-controls="collapseMES">
+                                MES (Manufacturing Execution System)
+                            </button>
+                        </h2>
+                        <div id="collapseMES" class="accordion-collapse collapse" aria-labelledby="headingMES" data-bs-parent="#automationSoftwareAccordion">
+                            <div class="accordion-body">
+                                <p>Los sistemas de ejecución de manufactura (MES) son aplicaciones que gestionan, monitorizan y sincronizan los procesos de producción en tiempo real. Ayudan a optimizar la eficiencia de la planta y mejorar la calidad del producto.</p>
+                                <p><strong>Características principales:</strong></p>
+                                <ul>
+                                    <li>Gestión de órdenes de producción.</li>
+                                    <li>Monitorización de la eficiencia del equipo (OEE).</li>
+                                    <li>Control de calidad y trazabilidad.</li>
+                                    <li>Integración con ERP y otros sistemas empresariales.</li>
+                                </ul>
+                                <p><strong>Aplicaciones:</strong> Los MES son utilizados en diversas industrias de manufactura para asegurar que los procesos de producción se realicen de manera eficiente y conforme a los estándares de calidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals for more information -->
+            <div class="modal fade" id="roboticsModal" tabindex="-1" aria-labelledby="roboticsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="roboticsModalLabel">Robótica en la Automatización</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>La robótica es una de las tecnologías clave en la automatización moderna. Los robots se utilizan para realizar tareas repetitivas, peligrosas o precisas, mejorando la eficiencia y la seguridad en diversas industrias.</p>
+                            <p><strong>Tipos de robots industriales:</strong></p>
+                            <ul>
+                                <li><strong>Robots articulados:</strong> Tienen brazos con múltiples articulaciones, lo que les permite una gran flexibilidad y alcance. Se usan comúnmente en la manufactura automotriz para soldadura y ensamblaje.</li>
+                                <li><strong>Robots SCARA:</strong> Son ideales para tareas de ensamblaje y manipulación de materiales. Ofrecen movimientos rápidos y precisos en un plano horizontal.</li>
+                                <li><strong>Robots cartesianos:</strong> Operan en tres ejes lineales y son utilizados en aplicaciones de pick-and-place y corte.</li>
+                                <li><strong>Robots cilíndricos:</strong> Tienen un brazo rotativo y una columna deslizante, lo que los hace adecuados para tareas de ensamblaje y manipulación de materiales.</li>
+                                <li><strong>Robots esféricos:</strong> Ofrecen movimientos rotativos y lineales, utilizados en soldadura y pintura.</li>
+                            </ul>
+                            <p>Los robots industriales son esenciales para la modernización de las líneas de producción y la mejora de la eficiencia operativa. Además, permiten realizar tareas en entornos peligrosos para los humanos, mejorando la seguridad laboral.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="networksModal" tabindex="-1" aria-labelledby="networksModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="networksModalLabel">Redes Industriales y Comunicaciones</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Las redes industriales son esenciales para la comunicación entre dispositivos en un entorno automatizado. Permiten la transferencia de datos en tiempo real, la coordinación de procesos y la supervisión remota.</p>
+                            <p><strong>Protocolos de comunicación industrial:</strong></p>
+                            <ul>
+                                <li><strong>Modbus:</strong> Un protocolo de comunicación serial utilizado para conectar dispositivos electrónicos. Es simple y ampliamente adoptado en la industria.</li>
+                                <li><strong>Profibus:</strong> Un estándar de comunicación utilizado en la automatización de fábricas y procesos. Soporta comunicaciones en tiempo real y una alta cantidad de dispositivos.</li>
+                                <li><strong>Ethernet/IP:</strong> Un protocolo basado en Ethernet que permite la comunicación de datos en redes industriales. Ofrece alta velocidad y flexibilidad.</li>
+                                <li><strong>DeviceNet:</strong> Utilizado para la comunicación entre dispositivos de automatización como sensores y actuadores.</li>
+                            </ul>
+                            <p>Las redes industriales son la columna vertebral de los sistemas automatizados modernos, proporcionando la infraestructura necesaria para la interconexión de dispositivos y la gestión de datos en tiempo real.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

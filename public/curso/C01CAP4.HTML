@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Introducción a la Automatización</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            padding: 48px 0 0; /* Height of navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 5rem;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style> 
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 1: Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 2: Fundamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 3: Herramientas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 4: Aplicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 5: Tendencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Módulo 4: Aplicaciones de la Automatización</h1>
+            </div>
+
+            <div class="content-section">
+                <h2>Automatización en la Manufactura</h2>
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/800x200" class="card-img-top" alt="Manufactura">
+                    <div class="card-body">
+                        <p class="card-text">La automatización en la manufactura implica el uso de tecnologías y sistemas automatizados para realizar tareas en el proceso de producción. Esto incluye desde la manipulación de materiales hasta el ensamblaje y empaquetado de productos.</p>
+                        <h5>Ejemplos de líneas de producción automatizadas</h5>
+                        <ul>
+                            <li><strong>Industria Automotriz:</strong> Uso de robots para soldadura, pintura y ensamblaje de componentes de vehículos.</li>
+                            <li><strong>Fabricación de Electrónicos:</strong> Máquinas pick-and-place para montar componentes en placas de circuito impreso.</li>
+                            <li><strong>Industria Alimentaria:</strong> Sistemas automatizados para envasado, etiquetado y control de calidad de alimentos.</li>
+                        </ul>
+                        <p>Los beneficios incluyen una mayor eficiencia, reducción de costos y mejora en la calidad del producto.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Automatización en la Logística y Almacenamiento</h2>
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/800x200" class="card-img-top" alt="Logística y Almacenamiento">
+                    <div class="card-body">
+                        <p class="card-text">La automatización en la logística y el almacenamiento optimiza el flujo de materiales y productos a lo largo de la cadena de suministro. Esto incluye la gestión de inventarios, el almacenamiento automatizado y el manejo de materiales.</p>
+                        <h5>Sistemas de gestión de almacenes (WMS)</h5>
+                        <p>Los WMS son sistemas de software que gestionan y optimizan las operaciones de un almacén. Esto incluye la recepción, almacenamiento, picking y envío de productos.</p>
+                        <h5>Uso de AGVs (Automated Guided Vehicles)</h5>
+                        <p>Los AGVs son vehículos guiados automáticamente que transportan materiales dentro de una instalación sin intervención humana. Utilizan sensores y software para seguir rutas predefinidas.</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logisticsModal">
+                            Más información
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Automatización en el Hogar (Domótica)</h2>
+                <div class="accordion" id="homeAutomationAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSmartDevices">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmartDevices" aria-expanded="true" aria-controls="collapseSmartDevices">
+                                Dispositivos inteligentes
+                            </button>
+                        </h2>
+                        <div id="collapseSmartDevices" class="accordion-collapse collapse show" aria-labelledby="headingSmartDevices" data-bs-parent="#homeAutomationAccordion">
+                            <div class="accordion-body">
+                                <p>Los dispositivos inteligentes son una parte fundamental de la automatización del hogar. Estos dispositivos se conectan a una red doméstica y pueden ser controlados de manera remota mediante aplicaciones móviles o comandos de voz.</p>
+                                <p><strong>Ejemplos:</strong></p>
+                                <ul>
+                                    <li>Termostatos inteligentes que ajustan la temperatura según las preferencias del usuario.</li>
+                                    <li>Sistemas de iluminación que pueden ser programados para encenderse o apagarse en horarios específicos.</li>
+                                    <li>Asistentes de voz como Amazon Alexa o Google Home que controlan diversos dispositivos en el hogar.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingIntegration">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntegration" aria-expanded="false" aria-controls="collapseIntegration">
+                                Integración de sistemas
+                            </button>
+                        </h2>
+                        <div id="collapseIntegration" class="accordion-collapse collapse" aria-labelledby="headingIntegration" data-bs-parent="#homeAutomationAccordion">
+                            <div class="accordion-body">
+                                <p>La integración de sistemas en la domótica permite que diferentes dispositivos y sistemas trabajen juntos de manera coordinada. Esto se logra mediante plataformas y protocolos de comunicación estandarizados.</p>
+                                <p><strong>Ejemplos:</strong></p>
+                                <ul>
+                                    <li>Sistemas de seguridad que integran cámaras, sensores de movimiento y alarmas.</li>
+                                    <li>Control centralizado de iluminación, climatización y sistemas de entretenimiento.</li>
+                                    <li>Automatización de rutinas diarias, como el ajuste de la iluminación y la temperatura al despertar.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals for more information -->
+            <div class="modal fade" id="logisticsModal" tabindex="-1" aria-labelledby="logisticsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="logisticsModalLabel">Automatización en la Logística y Almacenamiento</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>La automatización en la logística y el almacenamiento optimiza el flujo de materiales y productos a lo largo de la cadena de suministro. Esto incluye la gestión de inventarios, el almacenamiento automatizado y el manejo de materiales.</p>
+                            <p><strong>Sistemas
+                                 de gestión de almacenes (WMS):</strong> Los WMS son sistemas de software que gestionan y optimizan las operaciones de un almacén. Esto incluye la recepción, almacenamiento, picking y envío de productos. Los WMS ayudan a mejorar la precisión del inventario, reducir los tiempos de ciclo y aumentar la eficiencia operativa.</p>
+                            <p><strong>Uso de AGVs (Automated Guided Vehicles):</strong> Los AGVs son vehículos guiados automáticamente que transportan materiales dentro de una instalación sin intervención humana. Utilizan sensores y software para seguir rutas predefinidas. Los AGVs mejoran la seguridad y eficiencia en el manejo de materiales, reduciendo la necesidad de equipos de transporte manual.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

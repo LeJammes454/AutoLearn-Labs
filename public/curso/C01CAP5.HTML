@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Introducción a la Automatización</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            padding: 48px 0 0; /* Height of navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 5rem;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style> 
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 1: Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 2: Fundamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 3: Herramientas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 4: Aplicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 5: Tendencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Módulo 5: Tendencias Futuras y Consideraciones</h1>
+            </div>
+
+            <div class="content-section">
+                <h2>Tendencias en la Automatización</h2>
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/800x200" class="card-img-top" alt="Tendencias en la Automatización">
+                    <div class="card-body">
+                        <p class="card-text">La automatización continúa evolucionando con el avance de nuevas tecnologías. Estas tendencias están transformando la forma en que las industrias operan y mejoran la eficiencia y la productividad.</p>
+                        <h5>Inteligencia Artificial y Machine Learning</h5>
+                        <p>La inteligencia artificial (IA) y el machine learning están integrándose en los sistemas automatizados para permitir la toma de decisiones autónoma y mejorar la eficiencia operativa. Los algoritmos de IA pueden analizar grandes volúmenes de datos en tiempo real, optimizando procesos y anticipando fallos antes de que ocurran.</p>
+                        <h5>Internet de las Cosas (IoT)</h5>
+                        <p>El IoT conecta dispositivos y sistemas a través de internet, permitiendo la comunicación y el intercambio de datos. En la automatización, el IoT facilita la monitorización y el control remoto de equipos y procesos, mejorando la eficiencia y reduciendo los tiempos de inactividad.</p>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aiModal">
+                            Más información sobre IA y Machine Learning
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#iotModal">
+                            Más información sobre IoT
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Consideraciones Éticas y de Seguridad</h2>
+                <div class="accordion" id="ethicsAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEmployment">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEmployment" aria-expanded="true" aria-controls="collapseEmployment">
+                                Impacto en el Empleo y la Sociedad
+                            </button>
+                        </h2>
+                        <div id="collapseEmployment" class="accordion-collapse collapse show" aria-labelledby="headingEmployment" data-bs-parent="#ethicsAccordion">
+                            <div class="accordion-body">
+                                <p>La automatización está cambiando la naturaleza del trabajo, eliminando algunos puestos de trabajo mientras crea otros nuevos. Es esencial considerar el impacto en los empleados y la sociedad en general.</p>
+                                <p><strong>Desafíos:</strong></p>
+                                <ul>
+                                    <li>Desplazamiento de trabajadores en puestos repetitivos y manuales.</li>
+                                    <li>Necesidad de formación y reciclaje de empleados para nuevos roles.</li>
+                                    <li>Desigualdad económica y acceso a nuevas oportunidades laborales.</li>
+                                </ul>
+                                <p><strong>Oportunidades:</strong></p>
+                                <ul>
+                                    <li>Crecimiento de nuevos empleos en tecnología y mantenimiento de sistemas automatizados.</li>
+                                    <li>Mejora en la seguridad laboral al reducir la exposición a tareas peligrosas.</li>
+                                    <li>Aumento en la productividad y la eficiencia económica.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSecurity">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecurity" aria-expanded="false" aria-controls="collapseSecurity">
+                                Seguridad en Sistemas Automatizados
+                            </button>
+                        </h2>
+                        <div id="collapseSecurity" class="accordion-collapse collapse" aria-labelledby="headingSecurity" data-bs-parent="#ethicsAccordion">
+                            <div class="accordion-body">
+                                <p>La seguridad en sistemas automatizados es crucial para proteger tanto a los trabajadores como a los datos y la infraestructura. La integración de tecnologías avanzadas requiere medidas de seguridad robustas para prevenir incidentes y ciberataques.</p>
+                                <p><strong>Medidas de Seguridad:</strong></p>
+                                <ul>
+                                    <li>Implementación de protocolos de seguridad cibernética para proteger los datos y la red.</li>
+                                    <li>Instalación de dispositivos de seguridad física como barreras y sensores para proteger a los trabajadores.</li>
+                                    <li>Capacitación continua de los empleados en prácticas de seguridad y respuesta a emergencias.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals for more information -->
+            <div class="modal fade" id="aiModal" tabindex="-1" aria-labelledby="aiModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="aiModalLabel">Inteligencia Artificial y Machine Learning</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>La inteligencia artificial (IA) y el machine learning están integrándose en los sistemas automatizados para permitir la toma de decisiones autónoma y mejorar la eficiencia operativa. Los algoritmos de IA pueden analizar grandes volúmenes de datos en tiempo real, optimizando procesos y anticipando fallos antes de que ocurran.</p>
+                            <p><strong>Aplicaciones:</strong></p>
+                            <ul>
+                                <li>Predicción de mantenimiento: Utilización de datos históricos y en tiempo real para predecir y prevenir fallos en equipos.</li>
+                                <li>Optimización de procesos: Ajuste de parámetros de producción en tiempo real para maximizar la eficiencia.</li>
+                                <li>Automatización de decisiones: Sistemas de IA que pueden tomar decisiones autónomas basadas en análisis de datos.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="iotModal" tabindex="-1" aria-labelledby="iotModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="iotModalLabel">Internet de las Cosas (IoT)</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>El Internet de las Cosas (IoT) conecta dispositivos y sistemas a través de internet, permitiendo la comunicación y el intercambio de datos. En la automatización, el IoT facilita la monitorización y el control remoto de equipos y procesos, mejorando la eficiencia y reduciendo los tiempos de inactividad.</p>
+                            <p><strong>Aplicaciones:</strong></p>
+                            <ul>
+                                <li>Monitorización en tiempo real: Sensores conectados que recopilan y envían datos sobre el estado de equipos y procesos.</li>
+                                <li>Control remoto: Capacidad de controlar dispositivos y sistemas desde cualquier lugar mediante aplicaciones móviles.</li>
+                                <li>Análisis de datos: Utilización de grandes volúmenes de datos para optimizar el rendimiento y predecir fallos.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

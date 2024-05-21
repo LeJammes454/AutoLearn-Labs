@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Introducción a la Automatización</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Behind the navbar */
+            padding: 48px 0 0; /* Height of navbar */
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+        .sidebar-sticky {
+            position: relative;
+            top: 0;
+            height: calc(100vh - 48px);
+            padding-top: .5rem;
+            overflow-x: hidden;
+            overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 5rem;
+            }
+        }
+
+        .content-section {
+            margin-bottom: 2rem;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style> 
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 1: Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 2: Fundamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 3: Herramientas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 4: Aplicaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Módulo 5: Tendencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Acerca de</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Módulo 2: Fundamentos de la Automatización</h1>
+            </div>
+
+            <div class="content-section">
+                <h2>Componentes Básicos de un Sistema Automatizado</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Sensores">
+                            <div class="card-body">
+                                <h5 class="card-title">Sensores</h5>
+                                <p class="card-text">Los sensores son dispositivos que detectan cambios en el entorno y envían esta información a otros componentes del sistema automatizado. Son cruciales para la recopilación de datos en tiempo real.</p>
+                                <p>Existen varios tipos de sensores:</p>
+                                <ul>
+                                    <li><strong>Sensores de temperatura:</strong> Miden la temperatura de un ambiente o material.</li>
+                                    <li><strong>Sensores de presión:</strong> Detectan la presión de líquidos o gases.</li>
+                                    <li><strong>Sensores de proximidad:</strong> Detectan la presencia de objetos cercanos sin contacto físico.</li>
+                                    <li><strong>Sensores de luz:</strong> Miden la cantidad de luz presente en el entorno.</li>
+                                    <li><strong>Sensores de movimiento:</strong> Detectan movimiento en un área específica.</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sensorsModal">
+                                    Más información
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Actuadores">
+                            <div class="card-body">
+                                <h5 class="card-title">Actuadores</h5>
+                                <p class="card-text">Los actuadores son dispositivos que convierten la energía eléctrica en movimiento. Son responsables de ejecutar las acciones determinadas por el sistema de control.</p>
+                                <p>Los actuadores incluyen:</p>
+                                <ul>
+                                    <li><strong>Motores eléctricos:</strong> Usados para proporcionar movimiento rotativo o lineal.</li>
+                                    <li><strong>Cilindros hidráulicos:</strong> Utilizan líquidos presurizados para producir movimiento.</li>
+                                    <li><strong>Cilindros neumáticos:</strong> Usan aire comprimido para generar movimiento.</li>
+                                    <li><strong>Dispositivos piezoeléctricos:</strong> Generan movimiento mediante la aplicación de voltaje a materiales piezoeléctricos.</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#actuatorsModal">
+                                    Más información
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Controladores">
+                            <div class="card-body">
+                                <h5 class="card-title">Controladores</h5>
+                                <p class="card-text">Los controladores, como los PLCs, son dispositivos que gestionan y coordinan las acciones de los sensores y actuadores. Interpretan los datos recibidos y emiten comandos para realizar las tareas.</p>
+                                <p>Tipos de controladores:</p>
+                                <ul>
+                                    <li><strong>PLCs (Controladores Lógicos Programables):</strong> Utilizados en aplicaciones industriales para el control de procesos complejos.</li>
+                                    <li><strong>Microcontroladores:</strong> Usados en sistemas embebidos y aplicaciones de control específico.</li>
+                                    <li><strong>Controladores de automatización industrial:</strong> Diseñados para integrar y gestionar múltiples dispositivos y sistemas en una planta de producción.</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#controllersModal">
+                                    Más información
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Interfaces de usuario">
+                            <div class="card-body">
+                                <h5 class="card-title">Interfaces de usuario</h5>
+                                <p class="card-text">Las interfaces de usuario permiten a los operadores interactuar con el sistema automatizado. Incluyen pantallas táctiles, paneles de control y software especializado.</p>
+                                <p>Tipos de interfaces:</p>
+                                <ul>
+                                    <li><strong>Paneles de control físicos:</strong> Botones y conmutadores para interactuar con el sistema.</li>
+                                    <li><strong>Pantallas táctiles:</strong> Interfaz gráfica para monitorear y controlar el sistema.</li>
+                                    <li><strong>Software SCADA:</strong> Sistemas de control y adquisición de datos que proporcionan una interfaz completa para gestionar la automatización.</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userInterfacesModal">
+                                    Más información
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Controladores Lógicos Programables (PLC)</h2>
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/800x200" class="card-img-top" alt="PLCs">
+                    <div class="card-body">
+                        <h5 class="card-title">Introducción a los PLCs</h5>
+                        <p class="card-text">Los Controladores Lógicos Programables (PLC) son dispositivos esenciales en la automatización industrial. Permiten el control de maquinaria y procesos de manera flexible y eficiente.</p>
+                        <h5>Arquitectura básica de un PLC</h5>
+                        <ul>
+                            <li><strong>Unidad de Procesamiento Central (CPU):</strong> Procesa las instrucciones del programa y toma decisiones basadas en las entradas.</li>
+                            <li><strong>Entradas y Salidas (I/O):</strong> Interfaces para conectar sensores y actuadores al PLC.</li>
+                            <li><strong>Memoria:</strong> Almacena el programa y los datos necesarios para su ejecución.</li>
+                            <li><strong>Fuente de Alimentación:</strong> Proporciona la energía necesaria para el funcionamiento del PLC.</li>
+                            <li><strong>Puertos de Comunicación:</strong> Permiten la comunicación con otros dispositivos y sistemas.</li>
+                        </ul>
+                        <h5>Ventajas de los PLCs</h5>
+                        <ul>
+                            <li><strong>Flexibilidad:</strong> Pueden ser reprogramados para adaptarse a diferentes tareas y procesos.</li>
+                            <li><strong>Fiabilidad:</strong> Diseñados para operar en entornos industriales difíciles.</li>
+                            <li><strong>Escalabilidad:</strong> Se pueden ampliar con módulos adicionales según las necesidades del sistema.</li>
+                            <li><strong>Interconectividad:</strong> Capacidad de comunicarse con otros sistemas y dispositivos a través de protocolos estándar.</li>
+                        </ul>
+                        <h5>Ejemplos de uso en la industria</h5>
+                        <p>Los PLCs se utilizan en una variedad de aplicaciones industriales, desde líneas de ensamblaje hasta sistemas de gestión de edificios. Permiten una programación flexible y son capaces de gestionar tareas complejas con alta fiabilidad. Por ejemplo, en una planta de producción de automóviles, un PLC puede controlar todo el proceso de ensamblaje, desde la soldadura de partes hasta la inspección final del vehículo.</p>
+                        <p>Otro ejemplo es el uso de PLCs en sistemas de tratamiento de aguas, donde controlan el flujo y tratamiento del agua para asegurar que se cumplan los estándares de calidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Sistemas de Control y Retroalimentación</h2>
+                <div class="accordion" id="controlSystemsAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOpenLoop">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOpenLoop" aria-expanded="true" aria-controls="collapseOpenLoop">
+                                Sistemas de lazo abierto
+                            </button>
+                        </h2>
+                        <div id="collapseOpenLoop" class="accordion-collapse collapse show" aria-labelledby="headingOpenLoop" data-bs-parent="#controlSystemsAccordion">
+                            <div class="accordion-body">
+                                <p>Los sistemas de control de lazo abierto operan sin retroalimentación. Realizan una acción determinada sin ajustar su comportamiento basado en el resultado.</p>
+                                <p><strong>Ejemplos:</strong> Un temporizador de microondas que calienta durante un tiempo predefinido sin medir la temperatura real de los alimentos.</p>
+                                <p><strong>Ventajas:</strong> Simplicidad y bajo costo, adecuados para tareas sencillas donde la precisión no es crítica.</p>
+                                <p><strong>Desventajas:</strong> Falta de capacidad para corregir errores o ajustar el proceso en tiempo real.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingClosedLoop">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClosedLoop" aria-expanded="false" aria-controls="collapseClosedLoop">
+                                Sistemas de lazo cerrado
+                            </button>
+                        </h2>
+                        <div id="collapseClosedLoop" class="accordion-collapse collapse" aria-labelledby="headingClosedLoop" data-bs-parent="#controlSystemsAccordion">
+                            <div class="accordion-body">
+                                <p>Los sistemas de control de lazo cerrado utilizan retroalimentación para ajustar su comportamiento en función del resultado de la acción. Este tipo de sistemas puede corregir errores y mejorar la precisión.</p>
+                                <p><strong>Ejemplos:</strong> Un termostato que ajusta la temperatura de una habitación midiendo continuamente la temperatura real y comparándola con la deseada.</p>
+                                <p><strong>Ventajas:</strong> Mayor precisión y capacidad para corregir errores en tiempo real.</p>
+                                <p><strong>Desventajas:</strong> Mayor complejidad y costo en comparación con los sistemas de lazo abierto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modals for more information -->
+            <div class="modal fade" id="sensorsModal" tabindex="-1" aria-labelledby="sensorsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="sensorsModalLabel">Sensores</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Los sensores son dispositivos que detectan cambios en el entorno y envían esta información a otros componentes del sistema automatizado. Hay diferentes tipos de sensores según lo que miden, como sensores de temperatura, presión, luz, y movimiento.</p>
+                            <p>Los sensores son fundamentales para recopilar datos precisos en tiempo real, lo que permite a los sistemas automatizados tomar decisiones informadas y ajustarse a las condiciones cambiantes.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="actuatorsModal" tabindex="-1" aria-labelledby="actuatorsModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="actuatorsModalLabel">Actuadores</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Los actuadores son dispositivos que convierten la energía eléctrica en movimiento. Son responsables de ejecutar las acciones determinadas por el sistema de control, como mover una palanca, abrir una válvula, o accionar un interruptor.</p>
+                            <p>Existen varios tipos de actuadores, incluyendo motores eléctricos, cilindros hidráulicos y neumáticos, y dispositivos piezoeléctricos. Cada tipo tiene aplicaciones específicas según los requerimientos del sistema automatizado.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="controllersModal" tabindex="-1" aria-labelledby="controllersModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="controllersModalLabel">Controladores</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Los controladores son el cerebro del sistema automatizado. Interpretan los datos recibidos de los sensores y emiten comandos a los actuadores para realizar las tareas necesarias.</p>
+                            <p>Un ejemplo común de controlador es el PLC, que puede ser programado para ejecutar una serie de instrucciones lógicas. Otros ejemplos incluyen microcontroladores y sistemas embebidos que son programados para realizar tareas específicas.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="userInterfacesModal" tabindex="-1" aria-labelledby="userInterfacesModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="userInterfacesModalLabel">Interfaces de Usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Las interfaces de usuario permiten a los operadores interactuar con el sistema automatizado. Estas interfaces pueden ser pantallas táctiles, paneles de control físicos, o software de gestión en computadoras.</p>
+                            <p>Las interfaces de usuario están diseñadas para ser intuitivas y proporcionar información en tiempo real sobre el estado del sistema, permitiendo a los operadores tomar decisiones informadas y ajustar parámetros según sea necesario.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<!-- JS de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
