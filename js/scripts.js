@@ -1,5 +1,3 @@
-
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -15,6 +13,11 @@ window.addEventListener('DOMContentLoaded', event => {
         }
 
     };
+
+    function redirectToLoginPage() {
+        // Redirigir a la página de inicio de sesión en la carpeta ''
+        window.location.href = "/public/pages/Login.html";
+      };
 
     // Shrink the navbar 
     navbarShrink();
