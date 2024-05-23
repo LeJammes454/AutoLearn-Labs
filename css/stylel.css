@@ -144,3 +144,11 @@ body {
   opacity: 0;
   visibility: hidden;
 }
+
+.text-blanco {
+  color: #0678e9; /* Blanco claro */
+}
+
+.text-p {
+  color: #ffffff; /* Negro */
+}
